@@ -137,6 +137,10 @@ JSQMessagesKeyboardControllerDelegate>
 @property (weak, nonatomic) UIGestureRecognizer *currentInteractivePopGestureRecognizer;
 
 @property (assign, nonatomic) BOOL textViewWasFirstResponderDuringInteractivePop;
+@property (strong, nonatomic) IBOutlet UIButton *JSQCloseButton;
+- (IBAction)JSQCloseButtonAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *JSQAudioButton;
+@property (strong, nonatomic) IBOutlet UIButton *JSQVideoButton;
 
 @end
 
@@ -169,7 +173,9 @@ JSQMessagesKeyboardControllerDelegate>
 
 - (void)jsq_configureMessagesViewController
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor clearColor];
+    [self.JSQVideoButton setImage:[UIImage imageNamed:@"custom_video"] forState:UIControlStateNormal];
+    [self.JSQAudioButton setImage:[UIImage imageNamed:@"custom_audio"] forState:UIControlStateNormal];
 
     self.jsq_isObserving = NO;
 
