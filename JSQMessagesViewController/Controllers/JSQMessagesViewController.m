@@ -149,7 +149,10 @@ JSQMessagesKeyboardControllerDelegate>
 @implementation JSQMessagesViewController
 
 #pragma mark - Class methods
-
+- (IBAction)JSQCloseButtonAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 + (UINib *)nib
 {
     return [UINib nibWithNibName:NSStringFromClass([JSQMessagesViewController class])
