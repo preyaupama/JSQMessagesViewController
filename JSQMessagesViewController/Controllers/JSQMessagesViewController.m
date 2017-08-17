@@ -117,13 +117,21 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 
 @property (strong, nonatomic) NSIndexPath *selectedIndexPathForMenu;
 
+@property (strong, nonatomic) IBOutlet UIButton *JSQCloseButton;
+- (IBAction)JSQCloseButtonAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *JSQAudioButton;
+@property (strong, nonatomic) IBOutlet UIButton *JSQVideoButton;
+
 @end
 
 
 @implementation JSQMessagesViewController
 
 #pragma mark - Class methods
-
+- (IBAction)JSQCloseButtonAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 + (UINib *)nib
 {
     return [UINib nibWithNibName:NSStringFromClass([JSQMessagesViewController class])
@@ -147,7 +155,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 
 - (void)jsq_configureMessagesViewController
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor clearColor];
+    [self.JSQVideoButton setImage:[UIImage imageNamed:@"custom_video"] forState:UIControlStateNormal];
+    [self.JSQAudioButton setImage:[UIImage imageNamed:@"custom_audio"] forState:UIControlStateNormal];
 
     self.toolbarHeightConstraint.constant = self.inputToolbar.preferredDefaultHeight;
 
