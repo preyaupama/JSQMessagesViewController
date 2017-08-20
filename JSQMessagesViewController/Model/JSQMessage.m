@@ -33,6 +33,30 @@
                                      text:text];
 }
 
+//upama
+- (instancetype)initWithSenderId:(NSString *)senderId
+                        displayName:(NSString *)displayName
+                               text:(NSString *)text
+                        avatarDataString:(NSString *)avatarDataString
+{
+    NSParameterAssert(senderId != nil);
+    NSParameterAssert(displayName != nil);
+    NSParameterAssert(text != nil);
+    //NSParameterAssert(date != nil);
+    
+    self = [super init];
+    if (self) {
+        _senderId = [senderId copy];
+        _senderDisplayName = [displayName copy];
+        _date = [NSDate date];
+        _isMediaMessage = NO;
+        _userAvatarDataString = avatarDataString;
+        _text = [text copy];
+    }
+    return self;
+}
+//upama
+
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date

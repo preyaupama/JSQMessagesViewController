@@ -51,6 +51,10 @@
  */
 @property (assign, nonatomic, readonly) BOOL isMediaMessage;
 
+//upama
+@property (copy, nonatomic, readonly) NSString *userAvatarDataString;
+//upama
+
 /**
  *  Returns the body text of the message, or `nil` if the message is a media message.
  *  That is, if `isMediaMessage` is equal to `YES` then this value will be `nil`.
@@ -81,6 +85,14 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                                text:(NSString *)text;
+
+
+//upama
+- (instancetype)initWithSenderId:(NSString *)senderId
+                        displayName:(NSString *)displayName
+                               text:(NSString *)text
+               userAvatarDataString:(NSString *)userAvatarDataString;
+//upama
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
