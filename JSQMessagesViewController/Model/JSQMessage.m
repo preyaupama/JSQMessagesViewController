@@ -37,7 +37,7 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                                text:(NSString *)text
-                        avatarDataString:(NSString *)avatarDataString
+                        userAvatarDataString:(NSString *)userAvatarDataString
 {
     NSParameterAssert(senderId != nil);
     NSParameterAssert(displayName != nil);
@@ -50,7 +50,7 @@
         _senderDisplayName = [displayName copy];
         _date = [NSDate date];
         _isMediaMessage = NO;
-        _userAvatarDataString = avatarDataString;
+        _userAvatarDataString = userAvatarDataString;
         _text = [text copy];
     }
     return self;
