@@ -106,7 +106,7 @@
         finalSize = [[messageData media] mediaViewDisplaySize];
     }
     else {
-        CGSize avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];
+        //CGSize avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];
 
         //  from the cell xibs, there is a 2 point space between avatar and bubble
         CGFloat spacingBetweenAvatarAndBubble = 2.0f;
@@ -114,9 +114,14 @@
         CGFloat horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
 
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
-        CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
+        //CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
-        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+//        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+//                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+//                                                          attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+//                                                             context:nil];
+        
+        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(272, CGFLOAT_MAX)
                                                              options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                                           attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
                                                              context:nil];
