@@ -26,8 +26,8 @@
     self = [super init];
     if (self) {
         _messageBubbleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-        //_messageBubbleContainerViewWidth = 320.0f;
-        _messageBubbleContainerViewWidth = 400.0f;
+        _messageBubbleContainerViewWidth = 320.0f;
+        //_messageBubbleContainerViewWidth = 400.0f;
     }
     return self;
 }
